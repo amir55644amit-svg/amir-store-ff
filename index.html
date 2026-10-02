@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر أمير لبيع حسابات فري فاير - AMIR STORE</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+            padding-bottom: 50px;
+        }
+
+        /* الهيدر والعنوان */
+        header {
+            background: linear-gradient(135deg, #ff4500, #ff8c00);
+            text-align: center;
+            padding: 30px 15px;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* حاوية الحسابات */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* بطاقة الحساب */
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.2);
+            border-color: #ff8c00;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: #ff8c00;
+            margin-bottom: 10px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #c9d1d9;
+        }
+
+        .features li {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li::before {
+            content: "✔";
+            color: #ff4500;
+            margin-left: 8px;
+            font-weight: bold;
+        }
+
+        .price-buy {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #21262d;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2ea44f;
+        }
+
+        .btn-buy {
+            background-color: #25d366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-buy:hover {
+            background-color: #1eb954;
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🔥 متجر أمير لبيع حسابات فري فاير 🔥</h1>
+        <p>أفضل الحسابات النادرة بأنسب الأسعار - ضمان وأمان تام</p>
+    </header>
+
+    <div class="container">
+
+        <!-- الحساب الأول -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200/1e293b/ffffff?text=Free+Fire+Account+1" alt="حساب فري فاير">
+            <div class="card-body">
+                <h2 class="card-title">حساب فاير باس قديم (سيزون 4)</h2>
+                <ul class="features">
+                    <li>المستوى (Level): 68</li>
+                    <li>الأقنعة والنادرة: قناع فاير باس 4 + سكنات نادرة</li>
+                    <li>الأسلحة: M1014 المطور لفل 4</li>
+                    <li>الربط: فيسبوك (جاهز للتسليم)</li>
+                </ul>
+                <div class="price-buy">
+                    <span class="price">2500 د.ج / $20</span>
+                    <a href="https://wa.me/213000000000?text=أريد شراء الحساب رقم 1" target="_blank" class="btn-buy">شراء عبر الواتساب</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- الحساب الثاني -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200/1e293b/ffffff?text=Free+Fire+Account+2" alt="حساب فري فاير">
+            <div class="card-body">
+                <h2 class="card-title">حساب مشحون جواهر + أسلحة مكس</h2>
+                <ul class="features">
+                    <li>المستوى (Level): 72</li>
+                    <li>الأصوات الشخصية: ألوك + كريستيانو + طاطا</li>
+                    <li>الأسلحة: AK التنين المطور لفل ماكس</li>
+                    <li>الربط: جيمايل (نظيف ومضمون)</li>
+                </ul>
+                <div class="price-buy">
+                    <span class="price">4500 د.ج / $35</span>
+                    <a href="https://wa.me/213000000000?text=أريد شراء الحساب رقم 2" target="_blank" class="btn-buy">شراء عبر الواتساب</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- الحساب الثالث -->
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200/1e293b/ffffff?text=Free+Fire+Account+3" alt="حساب فري فاير">
+            <div class="card-body">
+                <h2 class="card-title">حساب مبتدئ قوي للرتبة (Rank)</h2>
+                <ul class="features">
+                    <li>المستوى (Level): 55</li>
+                    <li>سكنات ملابس متعددة ورقصات حصرية</li>
+                    <li>الأسلحة: مجموعة متنوعة من الأسلحة الملونة</li>
+                    <li>الربط: فيسبوك</li>
+                </ul>
+                <div class="price-buy">
+                    <span class="price">1200 د.ج / $10</span>
+                    <a href="https://wa.me/213000000000?text=أريد شراء الحساب رقم 3" target="_blank" class="btn-buy">شراء عبر الواتساب</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © AMIR STORE - لتسليم الحسابات والتواصل السريع</p>
+    </footer>
+
+</body>
+</html>
