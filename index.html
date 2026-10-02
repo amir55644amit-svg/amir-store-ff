@@ -1,72 +1,168 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر أمير لبيع حسابات فري فاير - AMIR STORE</title>
+    <title>Amir Store FF | متجر حسابات فري فاير</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --card-bg: #161616;
+            --primary: #ffcc00;
+            --primary-glow: #ffae00;
+            --text: #ffffff;
+            --text-gray: #a0a0a0;
+        }
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #0d1117;
-            color: #ffffff;
-            padding-bottom: 50px;
+            background-color: var(--bg-color);
+            color: var(--text);
+            overflow-x: hidden;
         }
 
-        /* الهيدر والعنوان */
+        /* Header */
         header {
-            background: linear-gradient(135deg, #ff4500, #ff8c00);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
             text-align: center;
-            padding: 30px 15px;
-            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+            padding: 60px 20px;
+            background: radial-gradient(circle, rgba(255,204,0,0.15) 0%, rgba(11,11,11,1) 70%);
         }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        .hero img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 30px var(--primary-glow);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite alternate;
         }
 
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px var(--primary-glow); }
+            100% { transform: scale(1.05); box-shadow: 0 0 40px var(--primary-glow); }
         }
 
-        /* حاوية الحسابات */
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        /* Features Bar */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+
+        .feature-item i {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        /* Store Grid */
         .container {
-            max-width: 1100px;
-            margin: 40px auto 0;
-            padding: 0 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
 
-        /* بطاقة الحساب */
         .card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
+            background: var(--card-bg);
             border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #222;
+            transition: 0.3s;
+            position: relative;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.2);
-            border-color: #ff8c00;
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(255, 204, 0, 0.2);
         }
 
-        .card img {
+        .card-img {
             width: 100%;
             height: 180px;
+            background-color: #333;
             object-fit: cover;
-            border-bottom: 1px solid #30363d;
         }
 
         .card-body {
@@ -75,139 +171,144 @@
 
         .card-title {
             font-size: 1.3rem;
-            color: #ff8c00;
             margin-bottom: 10px;
         }
 
-        .features {
+        .card-specs {
             list-style: none;
+            color: var(--text-gray);
+            font-size: 0.9rem;
             margin-bottom: 15px;
-            font-size: 0.95rem;
-            color: #c9d1d9;
         }
 
-        .features li {
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-        }
-
-        .features li::before {
-            content: "✔";
-            color: #ff4500;
-            margin-left: 8px;
-            font-weight: bold;
-        }
-
-        .price-buy {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #21262d;
+        .card-specs li {
+            margin-bottom: 5px;
         }
 
         .price {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            color: var(--primary);
             font-weight: bold;
-            color: #2ea44f;
+            margin-bottom: 15px;
         }
 
-        .btn-buy {
-            background-color: #25d366;
-            color: #ffffff;
+        .btn-whatsapp {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            background: #25d366;
+            color: #fff;
             text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 6px;
             font-weight: bold;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
+            border-radius: 6px;
+            transition: 0.3s;
         }
 
-        .btn-buy:hover {
-            background-color: #1eb954;
+        .btn-whatsapp:hover {
+            background: #1eb954;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
         }
 
-        /* الفوتر */
+        /* Footer */
         footer {
             text-align: center;
+            padding: 20px;
+            background: #050505;
+            border-top: 1px solid #222;
             margin-top: 50px;
-            color: #8b949e;
-            font-size: 0.9rem;
+            color: var(--text-gray);
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <h1>🔥 متجر أمير لبيع حسابات فري فاير 🔥</h1>
-        <p>أفضل الحسابات النادرة بأنسب الأسعار - ضمان وأمان تام</p>
+        <div class="logo">
+            <!-- ضع رابط شعارك هنا -->
+            <img src="logo.png" alt="Amir Store Logo">
+            Amir Store FF
+        </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- ضع رابط صورة الشعار هنا -->
+        <img src="logo.png" alt="Amir Store FF">
+        <h1>AMIR STORE FF</h1>
+        <p>المتجر الأفضل والأسرع لشراء حسابات فري فاير المضمونة</p>
+
+        <div class="features">
+            <div class="feature-item"><i class="fas fa-gem"></i> حسابات مضمونة[span_1](start_span)[span_1](end_span)</div>
+            <div class="feature-item"><i class="fas fa-bolt"></i> تسليم فوري[span_2](start_span)[span_2](end_span)</div>
+            <div class="feature-item"><i class="fas fa-shield-alt"></i> أمان وثقة[span_3](start_span)[span_3](end_span)</div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
     <div class="container">
+        <div style="text-align: center;">
+            <h2 class="section-title">الحسابات المتاحة</h2>
+        </div>
 
-        <!-- الحساب الأول -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x200/1e293b/ffffff?text=Free+Fire+Account+1" alt="حساب فري فاير">
-            <div class="card-body">
-                <h2 class="card-title">حساب فاير باس قديم (سيزون 4)</h2>
-                <ul class="features">
-                    <li>المستوى (Level): 68</li>
-                    <li>الأقنعة والنادرة: قناع فاير باس 4 + سكنات نادرة</li>
-                    <li>الأسلحة: M1014 المطور لفل 4</li>
-                    <li>الربط: فيسبوك (جاهز للتسليم)</li>
-                </ul>
-                <div class="price-buy">
-                    <span class="price">2500 د.ج / $20</span>
-                    <a href="https://wa.me/213000000000?text=أريد شراء الحساب رقم 1" target="_blank" class="btn-buy">شراء عبر الواتساب</a>
+        <div class="grid">
+            <!-- حساب 1 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250/111/ffcc00?text=Free+Fire+Account+1" class="card-img" alt="Free Fire Account">
+                <div class="card-body">
+                    <h3 class="card-title">حساب فاير باس قديم (سيرفر فاخر)</h3>
+                    <ul class="card-specs">
+                        <li><i class="fas fa-check"></i> المستوى: 72</li>
+                        <li><i class="fas fa-check"></i> السيرفر: الشرق الأوسط</li>
+                        <li><i class="fas fa-check"></i> الأربسة: فايبر شادو + الساكورا</li>
+                    </ul>
+                    <div class="price">50 $</div>
+                    <a href="https://wa.me/213000000000?text=أريد%20شراء%20الحساب%20رقم%201" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> شراء عبر واتساب
+                    </a>
+                </div>
+            </div>
+
+            <!-- حساب 2 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250/111/ffcc00?text=Free+Fire+Account+2" class="card-img" alt="Free Fire Account">
+                <div class="card-body">
+                    <h3 class="card-title">حساب سكار إيفو أقصى مستوى</h3>
+                    <ul class="card-specs">
+                        <li><i class="fas fa-check"></i> المستوى: 68</li>
+                        <li><i class="fas fa-check"></i> الأسلحة التطوير: 4 أسلحة Max</li>
+                        <li><i class="fas fa-check"></i> الربط: فيسبوك (تسليم كامل)</li>
+                    </ul>
+                    <div class="price">80 $</div>
+                    <a href="https://wa.me/213000000000?text=أريد%20شراء%20الحساب%20رقم%202" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> شراء عبر واتساب
+                    </a>
+                </div>
+            </div>
+
+            <!-- حساب 3 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250/111/ffcc00?text=Free+Fire+Account+3" class="card-img" alt="Free Fire Account">
+                <div class="card-body">
+                    <h3 class="card-title">حساب نادر - رانك هيرويك</h3>
+                    <ul class="card-specs">
+                        <li><i class="fas fa-check"></i> المستوى: 65</li>
+                        <li><i class="fas fa-check"></i> يحتوي على 3000 جوهرة</li>
+                        <li><i class="fas fa-check"></i> الربط: جافا / جيميل</li>
+                    </ul>
+                    <div class="price">35 $</div>
+                    <a href="https://wa.me/213000000000?text=أريد%20شراء%20الحساب%20رقم%203" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> شراء عبر واتساب
+                    </a>
                 </div>
             </div>
         </div>
-
-        <!-- الحساب الثاني -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x200/1e293b/ffffff?text=Free+Fire+Account+2" alt="حساب فري فاير">
-            <div class="card-body">
-                <h2 class="card-title">حساب مشحون جواهر + أسلحة مكس</h2>
-                <ul class="features">
-                    <li>المستوى (Level): 72</li>
-                    <li>الأصوات الشخصية: ألوك + كريستيانو + طاطا</li>
-                    <li>الأسلحة: AK التنين المطور لفل ماكس</li>
-                    <li>الربط: جيمايل (نظيف ومضمون)</li>
-                </ul>
-                <div class="price-buy">
-                    <span class="price">4500 د.ج / $35</span>
-                    <a href="https://wa.me/213000000000?text=أريد شراء الحساب رقم 2" target="_blank" class="btn-buy">شراء عبر الواتساب</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- الحساب الثالث -->
-        <div class="card">
-            <img src="https://via.placeholder.com/400x200/1e293b/ffffff?text=Free+Fire+Account+3" alt="حساب فري فاير">
-            <div class="card-body">
-                <h2 class="card-title">حساب مبتدئ قوي للرتبة (Rank)</h2>
-                <ul class="features">
-                    <li>المستوى (Level): 55</li>
-                    <li>سكنات ملابس متعددة ورقصات حصرية</li>
-                    <li>الأسلحة: مجموعة متنوعة من الأسلحة الملونة</li>
-                    <li>الربط: فيسبوك</li>
-                </ul>
-                <div class="price-buy">
-                    <span class="price">1200 د.ج / $10</span>
-                    <a href="https://wa.me/213000000000?text=أريد شراء الحساب رقم 3" target="_blank" class="btn-buy">شراء عبر الواتساب</a>
-                </div>
-            </div>
-        </div>
-
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>جميع الحقوق محفوظة © AMIR STORE - لتسليم الحسابات والتواصل السريع</p>
+        <p>جميع الحقوق محفوظة &copy; Amir Store FF</p>
     </footer>
 
 </body>
